@@ -1,0 +1,68 @@
+# 根据 schema 提供自动补全
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# 在提示符之间插入空行
+add_newline = true
+#format = "$all"
+
+# 将提示符中的 '❯' 替换为 '➜'
+[character] # 此组件名称为 'character'
+success_symbol = '[➜](bold green)' # 将 'success_symbol' 字段设置成颜色为 'bold green' 的 '➜'  
+
+# 禁用 'package' 组件，将其隐藏
+[package]
+disabled = false
+format = '[$symbol$version]($style) '
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+#style = 'bold #82AAFF'
+
+[git_branch]
+format = ' [$symbol$branch(:$remote_branch)]($style) '
+symbol = ' '
+always_show_remote = true
+
+[bun]
+format = '[$symbol($version )]($style)'
+
+[c]
+format = '[$symbol($version(-$name) )]($style)'
+
+[cmake]
+format = '[$symbol($version )]($style)'
+
+[crystal]
+format = '[$symbol($version )]($style)'
+
+[conda]
+format = '[$symbol$environment]($style) '
+
+[rust]
+format = '[$symbol($version )]($style)'
+
+[git_status]
+conflicted = '🏳'
+ahead = '🏎💨'
+behind = '😰'
+diverged = '😵'
+up_to_date = '✓'
+untracked = '🤷'
+stashed = '📦'
+modified = '📝'
+staged = '[++\($count\)](green)'
+renamed = '👅'
+deleted = '🗑'
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+[git_metrics]
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[git_commit]
+format = '[\($hash$tag\)]($style) '
+
+
